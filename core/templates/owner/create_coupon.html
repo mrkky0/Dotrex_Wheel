@@ -1,0 +1,14 @@
+{% extends "owner/base_generic.html" %}
+
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block content %}
+    <h1>Business Create a New Coupon</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="discount">Discount:</label>
+        <input type="number" name="discount" step="0.01" value="10.00">
+        <button type="submit">Create Coupon</button>
+    </form>
+    <a href="{% url 'coupon_list' %}">Back to Coupon List</a>
+    {% endblock %}

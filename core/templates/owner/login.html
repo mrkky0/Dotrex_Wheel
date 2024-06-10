@@ -1,0 +1,19 @@
+<!-- accounts/templates/accounts/login.html -->
+
+{% extends "owner/base_generic.html" %}
+
+{% block title %}Giriş Yap{% endblock %}
+
+{% block content %}
+  <h2>Business Giriş Yap</h2>
+  <form method="post">
+    {% csrf_token %}
+    <label for="username">Kullanıcı Adı:</label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="password">Şifre:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <button type="submit">Giriş Yap</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "owner/base_generic.html" %}
+
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block content %}
+    <h1>Business Coupon List</h1>
+    <ul>
+        {% for coupon in coupons %}
+            <li>
+                <strong>Code:</strong> {{ coupon.code }}
+                <br>
+                <strong>Discount:</strong> {{ coupon.discount }}
+                <br>
+                <strong>Valid From:</strong> {{ coupon.valid_from }}
+                <br>
+                <strong>Valid To:</strong> {{ coupon.valid_to }}
+                <br>
+                <strong>Active:</strong> {{ coupon.active }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_coupon' %}">Create a new coupon</a>
+    {% endblock %}

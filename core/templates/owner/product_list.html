@@ -1,0 +1,20 @@
+{% extends "owner/base_generic.html" %}
+
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block content %}
+    <h1>Business Product List</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                <strong>Name:</strong> {{ product.name }}<br>
+                <strong>Description:</strong> {{ product.description }}<br>
+                <strong>Price:</strong> {{ product.price }}<br>
+                <strong>Available:</strong> {{ product.available }}<br>
+                <a href="{% url 'update_product' product.pk %}">Edit</a>
+                <a href="{% url 'delete_product' product.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_product' %}">Create a new product</a>
+    {% endblock %}

@@ -1,0 +1,13 @@
+{% extends "owner/base_generic.html" %}
+
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block content %}
+    <h1>Business Create Product</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Product</button>
+    </form>
+    <a href="{% url 'product_list' %}">Back to Product List</a>
+    {% endblock %}

@@ -1,0 +1,23 @@
+<!-- your_app/templates/your_app/home.html -->
+
+{% extends "owner/base_generic.html" %}
+
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block content %}
+ 
+  <form method="post">
+    {% csrf_token %}
+    <h1>Business Profile</h1>
+    <p>Business Name: {{ business.name }}</p>
+    <a href="{% url 'product_list' %}">Manage Products</a>
+
+  </form>
+  <nav>
+    <ul>
+        <li><a href="{% url 'owner_payment' %}">payment</a></li>
+    </ul>
+</nav>
+{% endblock %}
+
+ 

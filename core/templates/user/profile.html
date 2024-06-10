@@ -1,0 +1,23 @@
+<!-- your_app/templates/your_app/home.html -->
+
+{% extends "user/base_generic.html" %}
+
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block content %}
+  
+  <form method="post">
+    {% csrf_token %}
+    <h1>User Profile</h1>
+ 
+
+<b> User Name: {{userName}} </b>
+  </form>
+  <nav>
+    <ul>
+        <li><a href="{% url 'user_payment' %}">payment</a></li>
+    </ul>
+</nav>
+{% endblock %}
+
+ 

@@ -1,0 +1,15 @@
+
+{% extends "user/base_generic.html" %}
+
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block content %}
+    <h1>Businesses</h1>
+    <ul>
+        {% for business in businesses %}
+            <li>
+                <a href="{% url 'business_menu' business.id %}">{{ business.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endblock %}

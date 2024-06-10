@@ -1,0 +1,34 @@
+<!-- templates/base_generic.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}User Site{% endblock %}</title>
+</head>
+
+<body>
+    <header>
+        <h1>User site</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'user_home' %}">Ana Sayfa</a></li>
+ 
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'user_profile' %}">Profile</a></li>
+                <li><a href="{% url 'business_list' %}">Business</a></li>
+                <li><a href="{% url 'user_logout' %}">Çıkış Yap</a></li>
+                {% else %}
+                <li><a href="{% url 'user_login' %}">Giriş Yap</a></li>
+                <li><a href="{% url 'user_register' %}">Kayıt Ol</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+
+</html>
